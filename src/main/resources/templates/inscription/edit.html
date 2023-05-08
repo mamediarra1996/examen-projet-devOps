@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/inscription/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/inscription/css/style.css">
+
+</head>
+<body>
+
+<div class="main">
+    <div class="container">
+        <div class="signup-content">
+            <!-- success message -->
+            <div th:if="${param.success}">
+                <div class="alert alert-info">Vous êtes modifier avec succès</div>
+            </div>
+            <div class="signup-img">
+                <img src="/inscription/images/signup-img.jpg" alt="">
+            </div>
+
+            <form class="register-form" id="register-form" th:action="@{/update/{id}(id=${id})}" th:object="${cv}" method="post">
+                <center> <h2>Modification</h2></center>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nom">NOM :</label>
+                        <input type="text" name="nom" id="nom" required th:field="*{nom}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">PRENOM :</label>
+                        <input type="text" name="prenom" id="prenom" required th:field="*{prenom}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">AGE :</label>
+                        <input type="int" name="age" id="age" required th:field="*{age}"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="adresse">ADRESSE :</label>
+                    <input type="text" name="adresse" id="adresse" required th:field="*{adresse}"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email ID :</label>
+                    <input type="email" name="email" id="email" required th:field="*{email}"/>
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Telephone :</label>
+                    <input type="text" name="telephone" id="telephone" required th:field="*{telephone}"/>
+                </div>
+                <div class="form-group">
+                    <label for="specialite">Specialite :</label>
+                    <input type="text" name="specialite" id="specialite" required th:field="*{specialite}"/>
+                </div>
+                <div class="form-group">
+                    <label for="niveauEtude">NiveauEtude :</label>
+                    <input type="text" name="niveauEtude" id="niveauEtude" required th:field="*{niveauEtude}"/>
+                </div>
+                <div class="form-group">
+                    <label for="experienceProfessionnelle">ExperienceProfessionnelle :</label>
+                    <input type="text" name="experienceProfessionnelle" id="experienceProfessionnelle" required th:field="*{experienceProfessionnelle}"/>
+                </div>
+                <div class="form-submit">
+                    <input type="submit" value="Update" class="Update" name="Update" id="Update" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<!-- JS -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

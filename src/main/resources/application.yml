@@ -1,0 +1,22 @@
+server:
+  port: 8091
+
+spring:
+  datasource:
+    password:
+    url: jdbc:mysql://localhost:3306/projet-jee-devops1?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+  application:
+    name: Projet-JEE-DevOps
+    
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+
+info:
+  application:
+    name: Projet-JEE-DevOps
+    version: '@project.version@'
